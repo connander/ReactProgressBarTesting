@@ -3,27 +3,27 @@ import Tooltip from 'react-bootstrap/Tooltip';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import SingleBar from "../progressbar";
 import "../progressbar/progressbar.css"
-import InputData from '../inputForm'
+import InputData from './inputForm'
 
 
 class Build extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { value: "" };
-        this.handleTempChange = this.handleTempSubmit.bind(this);
+        this.state = { temp: "" };
+        this.handleTempChange = this.handleSubmit.bind(this);
     }
 
-    handleTempSubmit(temp) {
+    handleSubmit(temp) {
         this.setState({ temp });
-        console.log(this.state);
+        //console.log(this.state);
     }
 
     render() {
-        const temp = this.props.temp;
+        const temp = this.state.temp;
         return (
             <div>
-                <InputData onTempChange={this.handleTempSubmit} />
+                <InputData onTempChange={this.handleSubmit} />
 
                 <div className="PageContainer">
                     <div className="App">

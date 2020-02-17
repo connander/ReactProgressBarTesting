@@ -8,7 +8,6 @@ class InputData extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { value: '' };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -23,13 +22,13 @@ class InputData extends Component {
     render() {
         const temp = this.props.temp;
         return (
-            <Form onSubmit={this.handleSubmit}>
-                <Form.Group controlId="formBasicEmail">
+            <Form>
+                <Form.Group>
                     <Form.Label>Pick A Number</Form.Label>
-                    <Form.Control placeholder="100" value = {temp} onChange={this.handleChange}/>
+                    <Form.Control placeholder="100" value = {temp} onSubmit={this.handleSubmit} onChange={this.handleChange} />
                 </Form.Group>
                 <Button type="submit">
-                    Submit
+                    Words
                 </Button>
             </Form>
         );
